@@ -1,0 +1,63 @@
+body{
+    background-color: black;
+}
+
+h1,h2,h3,h4,h5,h6,p,small{
+    color: white;
+}
+.userimg{
+    border-radius: 50%;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
+}
+::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+
+.forminput{
+    color: black;
+}
+
+
+@media screen and (min-width: 480px) {
+    .searchinput{
+        margin-right: 2rem;
+    }
+
+    .forminput{
+        width: 20rem;
+    }
+  }
+
+  .point{
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .toast{
+    height: 5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }

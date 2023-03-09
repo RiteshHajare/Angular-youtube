@@ -1,0 +1,65 @@
+.homepage{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.56rem;
+}
+
+.homePageBlock{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+.myvideo{
+    width: 17rem;
+    height: 13rem;
+}
+
+video{
+    cursor: pointer;
+}
+
+.preeffect{
+    display: inline-block;
+    margin: 0.5rem 0.2rem;
+    position: relative;
+    border: 1px solid grey;
+    overflow: hidden;
+}
+
+ .effect:before{
+    content: "play";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    font-weight: 500;
+    cursor: pointer;    
+    transition: all 0.6s ease;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 1000;
+} 
+
+.effect:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    background-color:rgb(230, 230, 230);
+    cursor: pointer;    
+    transition: all 0.6s ease;
+    opacity: 0.3;
+}
+
+.effect:hover:after,.effect:hover:before{
+    bottom: 0;
+}

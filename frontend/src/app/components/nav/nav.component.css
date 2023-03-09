@@ -1,0 +1,4 @@
+.dropdown-bar{visibility: hidden;}
+[name="link1"]:hover,[name="link2"]:hover,[name="link3"]:hover{
+    color: aquamarine !important;
+}

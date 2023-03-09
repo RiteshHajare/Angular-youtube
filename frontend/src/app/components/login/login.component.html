@@ -1,0 +1,78 @@
+<app-nav [type]="'upload'"></app-nav>
+
+<section
+  style="height: 89vh; width: 30rem; margin: 0 auto"
+  class="d-flex justify-content-center align-items-center flex-column"
+>
+  <div
+    class="toast toast1 bg-danger"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    style="top: 4rem"
+  >
+    <div class="toast-header">
+      <img
+        style="width: 2rem"
+        src="/assets/bot.jpeg"
+        class="rounded me-2"
+        alt="..."
+      />
+      <strong class="me-auto">Failed! </strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body">Please fill correct details</div>
+  </div>
+  <h1 style="text-align: center">Login Page</h1>
+  <form
+    [formGroup]="loginForm"
+    style="display: flex; flex-direction: column"
+    class="container align-items-center mt-2"
+  >
+    <!-- Email input -->
+    <div style="width: 100%" class="form-outline mb-4">
+      <input
+        [formControl]="email"
+        type="email"
+        id="form2Example1"
+        class="form-control"
+      />
+      <label class="form-label text-white" for="form2Example1"
+        >Email address</label
+      >
+      <h6 class="text-danger" [hidden]="email.valid || email.untouched">
+        Enter Valid Email
+      </h6>
+    </div>
+
+    <!-- Password input -->
+    <div style="width: 100%" class="form-outline mb-4">
+      <input
+        [formControl]="password"
+        type="password"
+        id="form2Example2"
+        class="form-control"
+      />
+      <label class="form-label text-white" for="form2Example2">Password</label>
+      <h6 class="text-danger" [hidden]="password.valid || password.untouched">
+        Enter Valid Password with minLen 6
+      </h6>
+    </div>
+
+    <!-- Submit button -->
+    <button
+      [disabled]="!loginForm.valid"
+      (click)="login()"
+      style="width: 8rem"
+      class="btn btn-primary mb-4"
+    >
+      Sign in
+    </button>
+  </form>
+  <p>Dont have Account? <a routerLink="/signup">register here</a></p>
+</section>

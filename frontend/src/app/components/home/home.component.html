@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="homePageBlock">
+  <div class="homepage">
+    <div
+      *ngFor="let userRes of allVideos"
+      (click)="userPage(userRes)"
+      class="preeffect effect card"
+      (mouseenter)="videoPlayer.play()"
+      (mouseleave)="mouseLeave(videoPlayer)"
+    >
+      <video
+        (loadstart)="loadStart(videoPlayer)"
+        loop
+        class="myvideo"
+        (mouseenter)="this.videoPlayer.muted = true"
+        muted
+        #videoPlayer
+        (click)="userPage(userRes)"
+      >
+        <source src="{{ userRes['video'] }}" type="video/mp4" />
+        Browser not supported
+      </video>
+    </div>
+  </div>
+</div>

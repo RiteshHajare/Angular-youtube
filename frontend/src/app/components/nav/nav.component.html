@@ -1,0 +1,61 @@
+<nav
+  class="navbar navbar-expand-lg bg-black sticky-top px-3 pt-2"
+  data-bs-theme="dark"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <!-- <img class="bg-white" src="assets/youtube.avif" alt="youtube.avif" /> -->
+      Youtube
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        class="d-flex searchinput mx-auto {{
+          type === 'upload' && 'invisible'
+        }} "
+        role="search"
+      >
+        <input
+          class="form-control me-2 forminput text-black"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success">Search</button>
+      </div>
+      <div
+        style="margin-left: 17px"
+        *ngIf="cookieBool; else elseblock"
+        (mouseover)="hoverEffect()"
+        (mouseout)="staticEffect()"
+        class="dropdown position-relative"
+      >
+        <img class="userimg" src="assets/user.png" alt="my image" />
+        <div
+          class="dropdown-bar position-absolute bg-body-secondary card d-flex flex-col"
+          style="left: -3.45rem; width: max-content; padding: 0.3rem 0.5rem"
+        >
+          <p name="link2" (click)="imgClick()" class="text-center point">
+            Upload video
+          </p>
+          <p name="link3" (click)="logout()" class="text-center point">
+            Logout
+          </p>
+        </div>
+      </div>
+      <ng-template #elseblock>
+        <a class="btn btn-primary" routerLink="/login">SignIn</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

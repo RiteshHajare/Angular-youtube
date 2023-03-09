@@ -1,0 +1,108 @@
+<div class="userpage">
+  <div
+    class="toast toast1 bg-primary"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <img
+        style="width: 2rem"
+        src="/assets/bot.jpeg"
+        class="rounded me-2"
+        alt="..."
+      />
+      <strong class="me-auto">Hola</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body">Comment added!</div>
+  </div>
+  <div
+    class="toast toast2 bg-danger"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <img
+        style="width: 2rem"
+        src="/assets/bot.jpeg"
+        class="rounded me-2"
+        alt="..."
+      />
+      <strong class="me-auto">opps!</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body">Some error occurred</div>
+  </div>
+  <div
+    class="toast toast3 bg-warning"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <img
+        style="width: 2rem"
+        src="/assets/bot.jpeg"
+        class="rounded me-2"
+        alt="..."
+      />
+      <strong class="me-auto">Sorry!</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body">Please, login to comment</div>
+  </div>
+  <div class="videodiv">
+    <video controls class="myvideo card" #videoPlayer>
+      <source src="{{ link }}" type="video/mp4" />
+      Browser not supported
+    </video>
+    <h4 class="text-center mt-4">Posted by : {{ username }}</h4>
+  </div>
+  <div class="comments">
+    <h2>Comments</h2>
+    <div class="d-flex searchinput justify-content-center m-0" role="search">
+      <input
+        #userinput
+        class="form-control me-2 forminput text-black"
+        type="search"
+        placeholder="Add comment"
+        aria-label="Search"
+        (keydown)="keyPressed($event, userinput.value)"
+      />
+      <button
+        (click)="commentClick(userinput.value)"
+        class="btn btn-outline-success"
+      >
+        Submit
+      </button>
+    </div>
+    <div class="scrollcommentdiv">
+      <div
+        *ngFor="let comment of comments"
+        class="commentdiv d-flex card bg-success-subtle p-1"
+      >
+        <strong class="text-black inline">{{ comment.user }}&nbsp; : </strong>
+        <p class="text-black mb-2">
+          {{ comment.comment }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

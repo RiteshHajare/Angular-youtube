@@ -1,0 +1,38 @@
+video{
+    margin-left: 4rem;
+    margin-top: 4rem;
+    width: 37rem;
+}
+
+.userpage{
+    display: grid;
+    grid-template-columns: 55% 45% ;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.searchinput{
+   text-align: center;
+}
+.comments{
+    margin-top: 2rem;
+}
+
+.commentdiv{
+    margin-top: 2rem;
+    margin-right: 3rem;
+}
+
+.commentdiv p{
+    gap: 1rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.scrollcommentdiv{
+    height: 70vh;
+    margin-top: 2rem;
+    overflow-y: auto;
+}

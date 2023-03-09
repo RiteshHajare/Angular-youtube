@@ -1,0 +1,45 @@
+<app-nav [type]="'upload'"></app-nav>
+
+<div
+  class="bg-black card d-flex justify-content-center align-items-center"
+  style="height: 89vh"
+>
+  <div
+    class="toast toast1 bg-primary"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <img
+        style="width: 2rem"
+        src="/assets/bot.jpeg"
+        class="rounded me-2"
+        alt="..."
+      />
+      <strong class="me-auto">Congratulations </strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="toast-body">Uploaded video successfully</div>
+  </div>
+  <div *ngIf="loader" class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <h1 class="mb-5 storedMessage" #storedMessage></h1>
+  <input
+    class="w-2 text-white"
+    accept="video/*"
+    (change)="handleVideo($event)"
+    type="file"
+    name="videofile"
+    [disabled]="disable"
+  />
+</div>
